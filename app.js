@@ -1,17 +1,25 @@
 const profileDataArgs = process.argv.slice(2, process.argv.length);
 
-console.log(profileDataArgs);
+const generatePage = () => 'Name: Jane, Github: janehub';
 
-const printProfileData = profileDataArr => {
-    // This...
-    for (let i = 0; i < profileDataArr.length; i++) {
-        console.log(profileDataArr[i]);
-    }
+fs.writeFile('index.html', generatePage(name, github), err => {
+    if (err) throw err;
 
-    console.log('================');
+    console.log('Portfolio Complete! Check out index.html to see the output!');
+})
 
-    // Is the same as this...
-    profileDataArr.forEach(profileItem => console.log(profileItem));
-};
+// console.log(profileDataArgs);
 
-printProfileData(profileDataArgs);
+// const printProfileData = profileDataArr => {
+//     // This...
+//     for (let i = 0; i < profileDataArr.length; i++) {
+//         console.log(profileDataArr[i]);
+//     }
+
+//     console.log('================');
+
+//     // Is the same as this...
+//     profileDataArr.forEach(profileItem => console.log(profileItem));
+// };
+
+// printProfileData(profileDataArgs);
