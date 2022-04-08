@@ -186,15 +186,18 @@ const mockData = {
 };
 
 
-// promptUser()
+
 const pageHTML = generatePage(mockData)
-    .then(promptProject)
-    .then(portfolioData => {
-        const pageHTML = generatePage(portfolioData);
+
+// commented out to utilize mockdata 
+// promptUser()
+    // .then(promptProject)
+    // .then(portfolioData => {
+    //     const pageHTML = generatePage(portfolioData);
 
         // fs.writeFile('./index.html', pageHTML, err => {
         //   if (err) throw new Error(err);
 
         //   console.log('Page created! Check out index.html in this directory to see it!');
         // });
-    });
+    // });
