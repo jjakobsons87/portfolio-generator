@@ -139,6 +139,7 @@ const promptProject = portfolioData => {
         })      
 };
 
+// mock data for testing - COMMENT OUT WHEN READY TO GO LIVE 
 const mockData = {
     name: 'Lernantino',
     github: 'lernantino',
@@ -185,19 +186,29 @@ const mockData = {
     ]
 };
 
-
-
+// use Mock data instead of ask questions COMMENT OUT WHEN GO LIVE 
 const pageHTML = generatePage(mockData)
 
-// commented out to utilize mockdata 
+// commented out to utilize mockdata - UNCOMMENT WHEN GO LIVE 
 // promptUser()
     // .then(promptProject)
     // .then(portfolioData => {
     //     const pageHTML = generatePage(portfolioData);
 
         fs.writeFile('./dist/index.html', pageHTML, err => {
-            if (err) throw new Error(err);
-
+            if (err) {
+                console.log(err);
+                return;
+            }
             console.log('Page created! Check out index.html in this directory to see it!');
+        
+            fs.copyFile('./src/style.css', './dist/style.css', err => {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+
+                console.log('Style sheet copied successfully!');
+            });
         });
     // });
