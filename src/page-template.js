@@ -32,11 +32,11 @@ module.exports = templateData => {
         </main>
 
         <footer class="container text-center py-3">
-            <h3 class="text-dark">&copy; ${new Date().getFullYear} by ${header.name}</h3>
+            <h3 class="text-dark">&copy; ${new Date().getFullYear()} by ${header.name}</h3>
         </footer>
 
     </body>
-    
+
     </html>
     `;
 };
